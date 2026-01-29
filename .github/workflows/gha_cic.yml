@@ -5,4 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Hello Step
-        run: echo "Hello GHA "
+        run: |
+          echo "Hello GHA "
+          echo "this is second line of comment"
