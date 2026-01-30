@@ -11,6 +11,6 @@ jobs:
       - name: Print all github variables
         run: |
           echo " this is all context github-variables ${{toJson(github)}}"
-      - name: Run Print env:
+      - name: Run Print env
         run: printenv
           
