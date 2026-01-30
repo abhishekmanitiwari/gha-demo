@@ -1,9 +1,13 @@
 name: build-deploy
 on: 
-    pull_request:
-        types:
-            - opened
-            - synchronize
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    types:
+      - opened
+      - synchronize
 
 jobs:
   build-job:
