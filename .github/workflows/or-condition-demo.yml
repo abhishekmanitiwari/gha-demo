@@ -1,0 +1,21 @@
+name: or-condition-demo
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+      - feature/*
+      - prod
+      - deploy
+
+jobs:
+  if-demo-job-name:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run step if actor is Abhishek or Mani
+        if: ${{ github.actor == 'Abhishek' || github.actor == 'Mani' }}
+        run: |
+          echo "Branch name: ${{ github.ref_name }}"
+          echo "User is either Abhishek or Mani"
