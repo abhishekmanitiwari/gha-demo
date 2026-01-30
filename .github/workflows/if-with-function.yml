@@ -13,8 +13,10 @@ jobs:
     steps:
       - name: This is dev branch step
         if: ${{ startsWith(github.ref_name, 'de') && github.event_name == 'push' }}
-        run: echo "Deployment the code for development ${{ github.ref_name }}"
-
+        run: |
+            echo "Deployment the code for development ${{ github.ref_name }}"
+            exit 1
+            
   deploye-job:
     runs-on: ubuntu-latest
     steps:
