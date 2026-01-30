@@ -13,7 +13,7 @@ jobs:
         run: echo "Building the application..."
 
 
-        
+
 
 #   deploy-job:
 #     runs-on: ubuntu-latest
