@@ -13,4 +13,6 @@ jobs:
           echo " this is all context github-variables ${{toJson(github)}}"
       - name: Run Print env
         run: printenv
-          
+
+      - name: Print Environment variable
+        run: echo "$GITHUB_SHA"
