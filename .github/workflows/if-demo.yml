@@ -14,10 +14,10 @@ jobs:
         steps:
             - name: Run this Step
               if: github.ref_name== 'main'
-              run: echo "This is main branch"
+              run: echo "This is main branch" ${{ github.ref_name }}
             - name: Run this Step
               if: github.ref_name == 'dev'
-              run: echo "This is dev branch"
+              run: echo "This is dev branch" ${{ github.ref_name }}
             - name: Run this Step
               if: github.ref_name == 'feature/test-feature'
               run: echo "This is test-feature branch"
