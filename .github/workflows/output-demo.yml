@@ -3,8 +3,11 @@ name: Output Demo
 on: push
 
 jobs:
-  job1:
+  build:
     runs-on: windows-latest
+
+    outputs:
+      version: ${{ steps.step1.outputs.version }}
 
     steps:
       - name: Step One
@@ -15,3 +18,11 @@ jobs:
       - name: Step Two
         shell: bash
         run: echo "This version is ${{ steps.step1.outputs.version }}"
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy
+        run: echo "We are deploying the app with version ${{ needs.build.outputs.version }}"
