@@ -1,1 +1,10 @@
-
+name: context-variable-workflow
+on: "push"
+jobs:
+  context-variable:
+    runs-on: macos-latest
+    steps:
+      - name: Use Context Variable 
+        run: |
+          echo "This workflow is triggered by ${{github.workflow}}"
+          echo "The repository name is ${{github.repository}}"
