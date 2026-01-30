@@ -13,12 +13,12 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Run this Step
-              if: github.ref == 'refs/heads/main'
+              if: github.ref == 'main'
               run: echo "This is main branch"
             - name: Run this Step
-              if: github.ref == 'refs/heads/dev'
+              if: github.ref == 'dev'
               run: echo "This is dev branch"
             - name: Run this Step
-              if: github.ref == 'refs/heads/feature/test-feature'
+              if: github.ref == 'feature/test-feature'
               run: echo "This is test-feature branch"
     
