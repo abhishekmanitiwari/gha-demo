@@ -1,10 +1,10 @@
-name: Hello World
+name: ENV_DEMO
 on: workflow_dispatch
+env:
+  APP_ENV: "dev"
 jobs:
-  hello:
+  env-demo:
     runs-on: ubuntu-latest
     steps:
-      - name: Hello Step
-        run: |
-          echo "Hello GHA "
-          echo "this is second line of comment"
+      - name: Connecting to env
+        run: echo app is running to $APP_ENV
