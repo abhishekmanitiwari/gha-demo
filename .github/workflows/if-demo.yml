@@ -16,7 +16,9 @@ jobs:
               if: github.ref == 'refs/heads/main'
               run: echo "This is main branch"
             - name: Run this Step
+              if: github.ref == 'refs/heads/dev'
               run: echo "This is dev branch"
             - name: Run this Step
+              if: github.ref == 'refs/heads/feature/test-feature'
               run: echo "This is test-feature branch"
     
