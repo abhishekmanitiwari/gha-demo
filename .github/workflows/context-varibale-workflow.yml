@@ -8,3 +8,7 @@ jobs:
         run: |
           echo "This workflow is triggered by ${{github.workflow}}"
           echo "The repository name is ${{github.repository}}"
+      - name: Print all github variables
+        run: |
+          echo " this is all context github-variables ${{toJson(github)}}"
+          
