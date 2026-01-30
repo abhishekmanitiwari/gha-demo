@@ -13,6 +13,8 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Run this Step for first_name Abhishek or middle_name Mani
-              if: github.actor== 'Abhishek' || github.actor== 'Mani'
-              run: echo "This is main branch" ${{ github.ref_name }} 
+              if: github.actor == 'Abhishek' || github.actor == 'Mani'
+              run: |
+                echo "This is main branch" ${{ github.ref_name }} 
+                echo "User is either Abhishek or Mani"
     
