@@ -12,12 +12,14 @@ on:
 jobs:
   build-job:
     runs-on: ubuntu-latest
+    if: github.event_name== 'pull_request'
     steps:
       - name: Build Step
         run: echo "Building the application..."
 
   deploy-job:
     runs-on: ubuntu-latest
+    if: github.event_name== 'push' && github.ref_name == 'main'
     steps:
       - name: Deploy Step
         run: echo "Deploying the application..."
